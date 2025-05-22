@@ -1,7 +1,6 @@
 {{
     config(
         materialized="table",
-        post_hook="COPY {{ this }} TO '../data/data_catalog/{{ this.identifier }}_{{ var('nba_start_date') }}.parquet'",
     )
 }}
 

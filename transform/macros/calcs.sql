@@ -1,12 +1,12 @@
 {%- macro elo_calc(home_team, visiting_team, home_adv) -%}
 
-   ( 1 - (1 / (10 ^ (-( {{visiting_team}} - {{home_team}} - {{home_adv}})::real/400)+1))) * 10000
+   ( 1 - (1 / (POWER(10, (-( {{visiting_team}} - {{home_team}} - {{home_adv}})::real/400)+1)))) * 10000
 
 {%- endmacro -%}
 
 {%- macro elo_diff(home_team, visiting_team, result, home_adv)  -%}
 
-   25.0 * (( {{result}} ) - (1 / (10 ^ ( - ({{visiting_team}} - {{home_team}} - {{home_adv}})::real / 400) + 1)))
+   25.0 * (( {{result}} ) - (1 / (POWER(10, ( - ({{visiting_team}} - {{home_team}} - {{home_adv}})::real / 400) + 1))))
 
 {%- endmacro -%}
 

@@ -15,7 +15,7 @@ with
             r.loser as losing_team,
             {{ var("include_actuals") }} as include_actuals,
             s.neutral as neutral_site,
-            r.winner_pts - r.loser_pts as margin
+            r.winner_pts - r.loser_pts as margin2
         from {{ ref("nfl_raw_schedule") }} s
         left join
             {{ ref("nfl_raw_results") }} r

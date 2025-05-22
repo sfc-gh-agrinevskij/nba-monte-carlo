@@ -1,1 +1,1 @@
-select * from {{ source("nfl", "nfl_schedule") }}
+select * from {{ ref("nfl_schedule") }}

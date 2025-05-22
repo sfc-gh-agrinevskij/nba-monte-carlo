@@ -1,4 +1,4 @@
-Week,Day,Date,Time,Winner/tie,,Loser/tie,,PtsW,PtsL,YdsW,TOW,YdsL,TOL
+Week,Day,Date,Time,Winner_tie,empty,Loser_tie,empty_2,PtsW,PtsL,YdsW,TOW,YdsL,TOL
 1,Thu,2024-09-05,8:20PM,Kansas City Chiefs,,Baltimore Ravens,boxscore,27,20,353,1,452,1
 1,Fri,2024-09-06,8:15PM,Philadelphia Eagles,,Green Bay Packers,boxscore,34,29,410,3,414,1
 1,Sun,2024-09-08,1:00PM,Pittsburgh Steelers,@,Atlanta Falcons,boxscore,18,10,270,0,226,3

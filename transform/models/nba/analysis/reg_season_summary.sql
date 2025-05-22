@@ -9,19 +9,17 @@ with
         select
             winning_team as team,
             e.conf,
-            round(avg(wins), 1) as avg_wins,
+            round(avg("wins"), 1) as avg_wins,
             v.win_total as vegas_wins,
-            round(avg(v.win_total) - (avg(wins)), 1) as elo_vs_vegas,
+            round(avg(v.win_total) - (avg("wins")), 1) as elo_vs_vegas,
             round(
-                percentile_cont(0.05) within group (order by wins asc), 1
+                percentile_cont(0.05) within group (order by "wins" asc), 1
             ) as wins_5th,
             round(
-                percentile_cont(0.95) within group (order by wins asc), 1
+                percentile_cont(0.95) within group (order by "wins" asc), 1
             ) as wins_95th,
-            count(*) filter (
-                where made_playoffs = 1 and made_play_in = 0
-            ) as made_postseason,
-            count(*) filter (where made_play_in = 1) as made_play_in,
+            sum(case when made_playoffs = 1 and made_play_in = 0 then 1 else 0 end) as made_postseason,
+            sum(case when made_play_in = 1 then 1 else 0 end) as made_play_in,
             round(
                 percentile_cont(0.05) within group (order by season_rank asc), 1
             ) as seed_5th,

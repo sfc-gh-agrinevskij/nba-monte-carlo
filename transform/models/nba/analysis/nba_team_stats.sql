@@ -25,20 +25,15 @@ with
 select
     key,
     count(*) as ct,
-    count(*) filter (where winner = team and playoff = 'r') as wins,
-    - count(*) filter (where loser = team and playoff = 'r') as losses,
-    count(*) filter (
-        where winner = team and team1 = team and playoff = 'r'
-    ) as home_wins, - count(*) filter (
-        where loser = team and team1 = team and playoff = 'r'
-    ) as home_losses,
-    count(*) filter (
-        where winner = team and team2 = team and playoff = 'r'
-    ) as away_wins, - count(*) filter (
-        where loser = team and team2 = team and playoff = 'r'
-    ) as away_losses,
-    count(*) filter (where winner = team and playoff <> 'r') as playoff_wins,
-    - count(*) filter (where loser = team and playoff <> 'r') as playoff_losses,
+    SUM(CASE WHEN winner = team AND playoff = 'r' THEN 1 ELSE 0 END) AS wins,
+    -SUM(CASE WHEN loser = team AND playoff = 'r' THEN 1 ELSE 0 END) AS losses,
+     SUM(CASE WHEN winner = team AND team1 = team AND playoff = 'r' THEN 1 ELSE 0 END) AS home_wins,
+    -SUM(CASE WHEN loser = team AND team1 = team AND playoff = 'r' THEN 1 ELSE 0 END) AS home_losses,
+    SUM(CASE WHEN winner = team AND team2 = team AND playoff = 'r' THEN 1 ELSE 0 END) AS away_wins,
+    -SUM(CASE WHEN loser = team AND team2 = team AND playoff = 'r' THEN 1 ELSE 0 END) AS away_losses,
+    SUM(CASE WHEN winner = team AND playoff <> 'r' THEN 1 ELSE 0 END) AS playoff_wins,
+    -SUM(CASE WHEN loser = team AND playoff <> 'r' THEN 1 ELSE 0 END) AS playoff_losses,
+
     avg(pf) as pf,
     avg(- pa) as pa,
     avg(pf) - avg(pa) as margin,

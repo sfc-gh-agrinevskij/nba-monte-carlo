@@ -1,1 +1,1 @@
-select * from {{ source("nba", "nba_team_ratings") }}
+select * from {{ ref("nba_team_ratings") }}

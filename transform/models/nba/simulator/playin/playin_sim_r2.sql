@@ -1,8 +1,8 @@
 select
     r.scenario_id,
     s.game_id,
-    s.home_team[7:] as home_team_id,
-    s.visiting_team[8:] as visiting_team_id,
+    substr(s.home_team, 7) as home_team_id,
+    substr(s.visiting_team, 8) as visiting_team_id,
     ev.conf as conf,
     ev.remaining_team as visiting_team,
     ev.winning_team_elo_rating as visiting_team_elo_rating,
@@ -33,9 +33,9 @@ left join {{ ref("nba_random_num_gen") }} r on r.game_id = s.game_id
 left join
     {{ ref("playin_sim_r1_end") }} eh
     on r.scenario_id = eh.scenario_id
-    and eh.game_id = s.home_team[7:]
+    and eh.game_id = substr(s.home_team, 7)
 left join
     {{ ref("playin_sim_r1_end") }} ev
     on r.scenario_id = ev.scenario_id
-    and ev.game_id = s.visiting_team[8:]
+    and ev.game_id = substr(s.visiting_team, 8)
 where s.type = 'playin_r2'

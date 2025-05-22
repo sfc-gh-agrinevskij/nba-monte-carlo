@@ -17,11 +17,11 @@ with
 
     cte_ranked_wins as (
         select
-            scenario_id,
-            team as winning_team,
-            conference as conf,
-            wins,
-            rank as season_rank
+            "scenario_id" as scenario_id,
+            "team" as winning_team,
+            "conference" as conf,
+            "wins",
+            "rank" as season_rank
         from {{ ref("nba_tiebreakers_optimized") }}
 
     ),

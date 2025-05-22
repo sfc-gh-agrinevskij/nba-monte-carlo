@@ -2,7 +2,7 @@ with
     cte_inner as (
         select
             s.id as game_id,
-            s."date" as game_date,
+            s.date as game_date,
             s.hometm as home_team,
             case
                 when s.hometm = r.winner then r.winner_pts else r.loser_pts
@@ -17,7 +17,7 @@ with
         from {{ ref("nba_raw_schedule") }} s
         left join
             {{ ref("nba_raw_results") }} r
-            on r."date" = s."date"
+            on r.date = s.date
             and (s.vistm = r.winner or s.vistm = r.loser)
         where home_team_score is not null
         group by all

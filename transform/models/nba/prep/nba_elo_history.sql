@@ -1,7 +1,7 @@
 {{ config(materialized="table") }}
 
 select a.*
-from {{ source("nba", "nba_elo") }} a
+from {{ ref("nba_elo") }} a
 union all
 select
     l.game_date as date,

@@ -1,4 +1,4 @@
-id,type,Day,Date,Year,Start (ET),Visitor/Neutral,PTS,Home/Neutral,PTS,Attend.,Arena,Notes,series_id
+id,type,Day,Date,Year,Start_ET,Visitor_Neutral,PTS_V,Home_Neutral,PTS_H,Attend,Arena,Notes,series_id
 1,reg_season,Tue, Oct 22, 2024,7:30p,New York Knicks,109,Boston Celtics,132,19156,TD Garden,,0
 2,reg_season,Tue, Oct 22, 2024,10:00p,Minnesota Timberwolves,103,Los Angeles Lakers,110,18997,Crypto.com Arena,,0
 3,reg_season,Wed, Oct 23, 2024,7:00p,Indiana Pacers,,Detroit Pistons,,,Little Caesars Arena,,0

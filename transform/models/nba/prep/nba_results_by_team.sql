@@ -1,4 +1,3 @@
-from {{ ref("nba_results_log") }}
 select
     game_id,
     'home' as team_type,
@@ -8,8 +7,8 @@ select
     case when home_team = winning_team then 'WIN' else 'LOSS' end as game_results,
     home_team_score - visiting_team_score as margin,
     type
-union all
 from {{ ref("nba_results_log") }}
+union all
 select
     game_id,
     'visitor' as team_type,
@@ -19,3 +18,4 @@ select
     case when visiting_team = winning_team then 'WIN' else 'LOSS' end as game_results,
     visiting_team_score - home_team_score as margin,
     type
+from {{ ref("nba_results_log") }}

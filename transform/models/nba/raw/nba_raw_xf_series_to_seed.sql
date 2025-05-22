@@ -1,1 +1,1 @@
-select * from {{ source("nba", "xf_series_to_seed") }} group by all
+select * from {{ ref("xf_series_to_seed") }} group by all

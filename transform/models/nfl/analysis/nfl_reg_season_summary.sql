@@ -12,10 +12,8 @@ with
             round(
                 percentile_cont(0.95) within group (order by wins asc), 1
             ) as wins_95th,
-            count(*) filter (
-                where made_playoffs = 1 and first_round_bye = 0
-            ) as made_postseason,
-            count(*) filter (where first_round_bye = 1) as first_round_bye,
+            sum(case when made_playoffs = 1 and first_round_bye = 0 then 1 else 0 end) as made_postseason,
+            sum(case when first_round_bye = 1 then 1 else 0 end) as first_round_bye,
             round(
                 percentile_cont(0.05) within group (order by season_rank asc), 1
             ) as seed_5th,
@@ -42,5 +40,5 @@ select
     c.first_round_bye,
     {{ var("sim_start_game_id") }} as sim_start_game_id
 from cte_summary c
-left join 'nfl_reg_season_actuals' a on a.team = c.team
+left join {{ ref("nfl_reg_season_actuals") }} a on a.team = c.team
 left join {{ ref("nfl_ratings") }} r on r.team = c.team
