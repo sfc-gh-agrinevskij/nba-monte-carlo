@@ -1,0 +1,11 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: ACCOUNTADMIN
+      warehouse: DEX_WH
+      database: NBA_MONTE_CARLO
+      schema: PUBLIC
+      account: ''
+      user: ''
