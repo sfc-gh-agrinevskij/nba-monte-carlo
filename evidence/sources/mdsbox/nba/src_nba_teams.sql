@@ -1,1 +1,0 @@
-FROM nba_teams

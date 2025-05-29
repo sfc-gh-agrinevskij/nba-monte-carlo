@@ -1,1 +1,0 @@
-select * from reg_season_summary

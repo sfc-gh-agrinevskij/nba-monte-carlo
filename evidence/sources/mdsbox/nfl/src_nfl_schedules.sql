@@ -1,1 +1,0 @@
-from nfl_schedules
