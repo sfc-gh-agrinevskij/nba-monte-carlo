@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table NBA_MONTE_CARLO.SEED.xf_series_to_seed (series_id integer,seed text)
+  ;
+    -- dbt seed --
+    
+            insert into NBA_MONTE_CARLO.SEED.xf_series_to_seed (series_id, seed) values
+            (%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s)
+        
+
+;
+  

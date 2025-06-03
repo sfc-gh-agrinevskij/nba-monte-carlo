@@ -1,0 +1,1 @@
+select * from NBA_MONTE_CARLO.SEED.xf_series_to_seed group by all

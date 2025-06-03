@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table NBA_MONTE_CARLO.SEED.nba_results (Date text,Start_ET text,Visitor_Neutral text,PTS_V integer,Home_Neutral text,PTS_H integer,Score_Type text,Rating integer,Attend integer,LOG text,Arena text,Notes integer)
+  ;
+    -- dbt seed --
+    
+            insert into NBA_MONTE_CARLO.SEED.nba_results (Date, Start_ET, Visitor_Neutral, PTS_V, Home_Neutral, PTS_H, Score_Type, Rating, Attend, LOG, Arena, Notes) values
+            (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        
+
+;
+  

@@ -1,0 +1,1 @@
+select team, win_total from NBA_MONTE_CARLO.PUBLIC.nfl_ratings group by all

@@ -1,0 +1,1 @@
+select * from NBA_MONTE_CARLO.PUBLIC.nfl_schedule

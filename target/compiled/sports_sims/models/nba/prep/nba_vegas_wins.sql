@@ -1,0 +1,1 @@
+select team, win_total::double as win_total from NBA_MONTE_CARLO.PUBLIC.nba_ratings group by all
