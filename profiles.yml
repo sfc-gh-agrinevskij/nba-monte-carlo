@@ -4,7 +4,15 @@ default:
     dev:
       type: snowflake
       role: DEV
-      warehouse: NBA_MONTE_CARLO_WH
+      warehouse: ADAPTIVE_WH
+      database: NBA_MONTE_CARLO
+      schema: PUBLIC
+      account: ''
+      user: ''
+    tools:
+      type: snowflake
+      role: PROD
+      warehouse: ADAPTIVE_WH
       database: NBA_MONTE_CARLO
       schema: PUBLIC
       account: ''
