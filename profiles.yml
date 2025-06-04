@@ -4,7 +4,7 @@ default:
     dev:
       type: snowflake
       role: ACCOUNTADMIN
-      warehouse: DEX_WH
+      warehouse: NBA_MONTE_CARLO_WH
       database: NBA_MONTE_CARLO
       schema: PUBLIC
       account: ''
