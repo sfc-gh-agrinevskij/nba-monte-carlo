@@ -3,7 +3,15 @@ default:
   outputs:
     dev:
       type: snowflake
-      role: ACCOUNTADMIN
+      role: DEV
+      warehouse: NBA_MONTE_CARLO_WH
+      database: NBA_MONTE_CARLO
+      schema: PUBLIC
+      account: ''
+      user: ''
+    prod:
+      type: snowflake
+      role: PROD
       warehouse: NBA_MONTE_CARLO_WH
       database: NBA_MONTE_CARLO
       schema: PUBLIC
