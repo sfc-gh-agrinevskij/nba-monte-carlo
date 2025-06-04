@@ -16,7 +16,7 @@ default:
       database: NBA_MONTE_CARLO
       schema: PUBLIC
       account: ''
-      user: ''
+      user: '' 
     prod:
       type: snowflake
       role: PROD
